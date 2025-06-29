@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions - Madilu Technologies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo::before {
+            content: "M";
+            width: 40px;
+            height: 40px;
+            background: white;
+            color: #1e3a8a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-weight: 800;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #93c5fd;
+        }
+
+        main {
+            padding: 4rem 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.3rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .development-notice {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .development-notice h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .solution-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.15);
+            border-color: #3b82f6;
+        }
+
+        .solution-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .solution-card h3 {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .solution-card p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .development-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #fbbf24;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .collaboration-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .collaboration-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .collaboration-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #059669;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+            margin: 0 0.5rem;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn.secondary:hover {
+            background: white;
+            color: #059669;
+        }
+
+        .future-vision {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .future-vision h2 {
+            color: #1e3a8a;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .future-vision p {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background: #1e3a8a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collaboration-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Madilu Technologies</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="solutions.html" class="active">Solutions</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero-section">
+            <h1>What We're Building</h1>
+            <p class="subtitle">Future-focused Healthcare Technology Solutions</p>
+            <p>We're developing innovative solutions that will transform healthcare delivery, improve patient outcomes, and streamline organizational workflows.</p>
+        </section>
+
+        <div class="development-notice">
+            <h3>🚀 Innovation in Progress</h3>
+            <p>Our solutions are currently in development. We're working closely with healthcare partners to ensure each solution addresses real-world challenges effectively.</p>
+        </div>
+
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="development-badge">In Development</div>
+                <div class="solution-icon">🌐</div>
+                <h3>Healthcare Connectivity Solutions</h3>
+                <p>Developing platforms that enable better communication and data sharing between healthcare organizations, improving coordination of care and reducing administrative overhead. Our connectivity solutions focus on seamless integration, secure data exchange, and real-time collaboration between healthcare providers.</p>
+            </div>
+
+            <div class="solution-card">
+                <div class="development-badge">In Development</div>
+                <div class="solution-icon">⚡</div>
+                <h3>Operational Efficiency Tools</h3>
+                <p>Creating software that streamlines healthcare workflows, reduces manual processes, and allows healthcare professionals to focus more on patient care. These tools will automate routine tasks, optimize resource allocation, and provide intelligent workflow recommendations.</p>
+            </div>
+
+            <div class="solution-card">
+                <div class="development-badge">In Development</div>
+                <div class="solution-icon">📊</div>
+                <h3>Data-Driven Healthcare Insights</h3>
+                <p>Building analytics tools that help healthcare organizations make informed decisions based on their data, improving outcomes and operational performance. Our insights platform will provide predictive analytics, performance metrics, and actionable intelligence for healthcare decision-makers.</p>
+            </div>
+
+            <div class="solution-card">
+                <div class="development-badge">In Development</div>
+                <div class="solution-icon">👥</div>
+                <h3>Patient Engagement Platforms</h3>
+                <p>Developing solutions that enhance the patient experience and improve engagement throughout the healthcare journey. These platforms will facilitate better communication between patients and providers, provide personalized health information, and support patient self-management.</p>
+            </div>
+        </div>
+
+        <section class="collaboration-section">
+            <h2>Join Our Innovation Journey</h2>
+            <p>We believe the best healthcare solutions are built through collaboration with the people who use them every day. Partner with us to shape the future of healthcare technology.</p>
+            <a href="contact_us.html" class="btn">Explore Partnership Opportunities</a>
+            <a href="contact_us.html" class="btn secondary">Learn About Our Progress</a>
+        </section>
+
+        <section class="future-vision">
+            <h2>Our Vision for Healthcare Technology</h2>
+            <p>We envision a future where technology seamlessly integrates with healthcare delivery to create more accessible, efficient, and effective care for all. Our solutions are designed with this vision in mind, focusing on interoperability, user experience, and measurable impact on patient outcomes. Through continuous innovation and collaboration with healthcare professionals, we're building the foundation for tomorrow's healthcare ecosystem.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Madilu Technologies. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Madilu Technologies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #2563eb;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        .section-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card h3 {
+            font-size: 1.3rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: #64748b;
+            margin: 0;
+        }
+
+        /* Team Expertise */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #3b82f6;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.4rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card p {
+            color: #64748b;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Approach Section */
+        .approach-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-top: 2rem;
+        }
+
+        .approach-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .approach-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .approach-icon {
+            background: #3b82f6;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .approach-text {
+            color: #64748b;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">Madilu Technologies</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html" class="active">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Passionate innovators dedicated to transforming healthcare through technology</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="section-content">
+                <p>Madilu Technologies was founded with a simple yet powerful belief: technology can make healthcare better for everyone. We are a passionate team of innovators, developers, and healthcare enthusiasts united by our mission to create positive change in the healthcare industry.</p>
+                
+                <p>Our founding team brings together over 25 years of combined experience in enterprise software development, digital transformation, and technology leadership. Having worked with Fortune 500 companies, led innovation initiatives, and built scalable solutions for complex business challenges, we now focus this expertise specifically on healthcare technology opportunities.</p>
+                
+                <p>From winning hackathons for life-saving IoT solutions to leading digital engineering practices at global consulting firms, our journey has always been about using technology to solve meaningful problems. Now, we're dedicated to applying this experience to make healthcare more efficient, accessible, and effective.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Mission & Vision</h2>
+            <div class="section-content">
+                <div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); margin-bottom: 2rem;">
+                    <h3 style="color: #2563eb; font-size: 1.4rem; margin-bottom: 1rem;">Our Mission</h3>
+                    <p style="margin: 0;">To bridge the gap between technology and healthcare by developing innovative software solutions that empower healthcare organizations, improve operational efficiency, and ultimately enhance patient care.</p>
+                </div>
+                
+                <div style="background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <h3 style="color: #2563eb; font-size: 1.4rem; margin-bottom: 1rem;">Our Vision</h3>
+                    <p style="margin: 0;">A world where technology seamlessly integrates with healthcare to create more accessible, efficient, and effective care for all.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>Innovation</h3>
+                    <p>We embrace new ideas and cutting-edge technologies to solve complex healthcare challenges</p>
+                </div>
+                <div class="value-card">
+                    <h3>Collaboration</h3>
+                    <p>We believe in the power of partnership and teamwork to achieve meaningful results</p>
+                </div>
+                <div class="value-card">
+                    <h3>Quality</h3>
+                    <p>We are committed to excellence in everything we do, from code to customer service</p>
+                </div>
+                <div class="value-card">
+                    <h3>Impact</h3>
+                    <p>We measure success by the positive change we create in healthcare delivery</p>
+                </div>
+                <div class="value-card">
+                    <h3>Integrity</h3>
+                    <p>We operate with transparency and ethical standards in all our business practices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Expertise -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Team Expertise</h2>
+            <div class="section-content">
+                <p>While we prefer to let our work speak for itself, our team brings together decades of combined experience across technology leadership, innovation, and enterprise solutions:</p>
+            </div>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h3>Technology Leadership & Architecture</h3>
+                    <p>Our founding team includes seasoned technology leaders with over 25 years of combined experience in software engineering, system architecture, and digital transformation. With deep expertise in core banking solutions, payment systems, cloud applications, and full-stack development.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3>Digital Engineering & Innovation</h3>
+                    <p>We bring proven experience in digital engineering practices, having led innovation initiatives across multiple industries. Our team has built merchant transaction API SaaS web services for large-scale platforms and developed predictive analytics solutions for risk management.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3>Product Development & Management</h3>
+                    <p>Our expertise spans the complete product development lifecycle, from MVP creation to full-scale implementation. We've held leadership roles in product engineering, program management, and delivery management with hands-on experience in agile methodologies.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3>Healthcare Technology Focus</h3>
+                    <p>While our backgrounds span fintech, core banking, and enterprise software, we're now channeling this extensive experience specifically toward healthcare technology challenges, understanding the critical requirements for security, compliance, and reliability.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3>Innovation & Problem-Solving</h3>
+                    <p>Our passion for innovation extends beyond professional work. We've participated in and won multiple hackathons, including IoT solutions for critical healthcare communication during emergencies - demonstrating our commitment to using technology to solve real-world problems.</p>
+                </div>
+                
+                <div class="expertise-card">
+                    <h3>Academic Excellence</h3>
+                    <p>Our technical leadership is backed by advanced academic credentials, including M.Tech in Data Science from BITS Pilani, ensuring we stay current with emerging technologies and data-driven approaches to healthcare solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">Our Approach</h2>
+            <div class="section-content">
+                <p>We don't just build software – we build relationships. Our approach involves deep collaboration with healthcare organizations to understand their unique challenges, workflows, and goals.</p>
+                
+                <div class="approach-content">
+                    <h3 style="color: #2563eb; font-size: 1.3rem; margin-bottom: 1.5rem;">How We Work</h3>
+                    <div class="approach-list">
+                        <div class="approach-item">
+                            <div class="approach-icon">1</div>
+                            <div class="approach-text">Comprehensive needs assessment and research</div>
+                        </div>
+                        <div class="approach-item">
+                            <div class="approach-icon">2</div>
+                            <div class="approach-text">Collaborative solution design with healthcare stakeholders</div>
+                        </div>
+                        <div class="approach-item">
+                            <div class="approach-icon">3</div>
+                            <div class="approach-text">Agile development processes</div>
+                        </div>
+                        <div class="approach-item">
+                            <div class="approach-icon">4</div>
+                            <div class="approach-text">User-centered design principles</div>
+                        </div>
+                        <div class="approach-item">
+                            <div class="approach-icon">5</div>
+                            <div class="approach-text">Rigorous testing and quality assurance</div>
+                        </div>
+                        <div class="approach-item">
+                            <div class="approach-icon">6</div>
+                            <div class="approach-text">Ongoing support and continuous improvement</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Madilu Technologies</h3>
+                    <p style="color: #94a3b8;">Transforming healthcare through innovative technology solutions.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="about_us.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="contact_us.html">Contact</a>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    
