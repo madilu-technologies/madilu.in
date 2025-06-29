@@ -3,258 +3,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Madilu Technologies</title>
+    <title>Madilu Technologies - Transforming Healthcare Through Innovation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            color: #333;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #ffffff;
+        }
+
         .container {
-            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 0 20px;
         }
 
-        /* Header Specific Styles */
-        header {
-            background-color: #ffffff;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
+        /* Header */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        .header-content {
+        .nav {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
-            align-items: flex-start; /* Align items to the start (left) of the container */
-            gap: 5px; /* Small gap between logo and tagline */
-            /* No need for position: relative or min-height here anymore */
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
         }
 
-        .header-content img {
-            max-width: 200px; /* Adjust as needed */
-            height: auto;
-            /* Logo is now left-aligned by parent's align-items */
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2563eb;
         }
 
-        .header-content .tagline {
-            font-size: 1.1em;
-            color: #666;
-            white-space: normal; /* Allow text to wrap naturally */
-            text-align: left; /* Align text within its own container to the left */
-            /* Remove all absolute positioning properties */
-            position: static;
-            transform: none;
-            padding-left: 0;
-            width: auto;
-            max-width: 100%; /* Ensure it doesn't overflow its parent */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
         }
 
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
 
         /* Hero Section */
-        .hero-section {
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 80px 20px;
-        }
-        .hero-section h1 {
-            font-size: 2.8em;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        .hero-section p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            color: #555;
-        }
-        .hero-section .cta-buttons a {
-            display: inline-block;
-            background-color: #007bff;
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
             color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 0 10px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-        .hero-section .cta-buttons a:hover {
-            background-color: #0056b3;
+            padding: 8rem 0 6rem;
+            margin-top: 80px;
+            text-align: center;
         }
 
-        /* Value Proposition Section */
-        .value-proposition-section {
-            padding: 60px 20px;
-            text-align: center;
-            background-color: #fff;
-        }
-        .value-proposition-section h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-        .value-proposition-section p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            color: #555;
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        /* Key Focus Areas */
-        .key-focus-areas {
-            background-color: #f9f9f9;
-            padding: 60px 20px;
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
         }
-        .key-focus-areas h2 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-        .focus-areas-grid {
+
+        .cta-buttons {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            gap: 1rem;
             justify-content: center;
-        }
-        .focus-area-column {
-            flex: 1;
-            min-width: 280px;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .focus-area-column:hover {
-            transform: translateY(-5px);
-        }
-        .focus-area-column h3 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #007bff;
-        }
-        .focus-area-column ul {
-            list-style: none;
-            padding: 0;
-        }
-        .focus-area-column ul li {
-            margin-bottom: 10px;
-            line-height: 1.5;
-            color: #555;
-        }
-        .focus-area-column ul li:last-child {
-            margin-bottom: 0;
+            flex-wrap: wrap;
         }
 
-        /* Why Choose Madilu Section */
-        .why-choose-madilu {
-            padding: 60px 20px;
-            background-color: #fff;
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
-        .why-choose-madilu h2 {
+
+        .btn-primary {
+            background: #ffffff;
+            color: #2563eb;
+        }
+
+        .btn-primary:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #2563eb;
+        }
+
+        /* Value Proposition */
+        .value-prop {
+            padding: 6rem 0;
+            background: #f8fafc;
+        }
+
+        .value-prop h2 {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
             text-align: center;
-            font-size: 2em;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-        .why-choose-madilu ul {
-            list-style: none;
-            padding: 0;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .why-choose-madilu ul li {
-            background-color: #f4f4f4;
-            margin-bottom: 15px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #555;
-            position: relative;
-            padding-left: 40px; /* Space for the checkmark */
-        }
-        .why-choose-madilu ul li::before {
-            content: '✔'; /* Checkmark symbol */
-            color: #28a745;
-            font-weight: bold;
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.2em;
         }
 
-        /* Responsive Design */
+        .value-prop p {
+            font-size: 1.2rem;
+            color: #64748b;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        /* Focus Areas */
+        .focus-areas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .focus-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .focus-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        .focus-card h3 {
+            font-size: 1.5rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .focus-card ul {
+            list-style: none;
+        }
+
+        .focus-card li {
+            padding: 0.5rem 0;
+            color: #64748b;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .focus-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .why-choose h2 {
+            font-size: 2.5rem;
+            color: #1e293b;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+
+        .feature p {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
-            .hero-section h1 {
-                font-size: 2em;
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            .hero-section p {
-                font-size: 1em;
+
+            .hero p {
+                font-size: 1.1rem;
             }
-            .hero-section .cta-buttons a {
-                margin: 10px 0;
-                display: block;
+
+            .nav-links {
+                display: none;
             }
-            .focus-areas-grid {
+
+            .cta-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            .focus-area-column {
-                width: 100%;
-                max-width: 450px; /* Limit width on smaller screens */
-            }
-        }
 
-        @media (max-width: 480px) {
-            .header-content img {
-                max-width: 150px; /* Smaller logo on very small screens */
-            }
-            .header-content .tagline {
-                font-size: 1em; /* Smaller font for tagline */
+            .focus-areas {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <img src="./res/madilu-full.png" alt="Madilu Technologies Logo">
-                <div class="tagline"><i>Your partner in healthcare innovation</i></div>
-            </div>
-        </div>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">Madilu Technologies</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <section class="hero-section">
+
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <h1>Transforming Healthcare Through Innovation</h1>
             <p>We're building the future of healthcare technology, one solution at a time.</p>
             <div class="cta-buttons">
-                <a href="#our-mission">Learn More About Our Mission</a>
-                <a href="#contact">Get In Touch</a>
+                <a href="about_us.html" class="btn btn-primary">Learn More About Our Mission</a>
+                <a href="contact_us.html" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
     </section>
 
-    <section class="value-proposition-section">
+    <!-- Value Proposition -->
+    <section class="value-prop">
         <div class="container">
             <h2>Bridging Technology and Healthcare</h2>
             <p>At Madilu Technologies, we believe that technology has the power to revolutionize healthcare delivery. We're dedicated to creating innovative software solutions that connect healthcare organizations, streamline processes, and ultimately improve patient outcomes.</p>
-        </div>
-    </section>
 
-    <section class="key-focus-areas">
-        <div class="container">
-            <h2>Key Focus Areas</h2>
-            <div class="focus-areas-grid">
-                <div class="focus-area-column">
+            <div class="focus-areas">
+                <div class="focus-card">
                     <h3>Enterprise Healthcare Solutions</h3>
                     <ul>
                         <li>Core system architecture and development</li>
@@ -263,7 +333,8 @@
                         <li>Data analytics and predictive insights</li>
                     </ul>
                 </div>
-                <div class="focus-area-column">
+
+                <div class="focus-card">
                     <h3>Digital Transformation</h3>
                     <ul>
                         <li>Legacy system modernization</li>
@@ -272,7 +343,8 @@
                         <li>Scalable platform development</li>
                     </ul>
                 </div>
-                <div class="focus-area-column">
+
+                <div class="focus-card">
                     <h3>Innovation & Research</h3>
                     <ul>
                         <li>Healthcare technology innovation</li>
@@ -285,19 +357,69 @@
         </div>
     </section>
 
-    <section class="why-choose-madilu">
+    <!-- Why Choose Section -->
+    <section class="why-choose">
         <div class="container">
             <h2>Why Choose Madilu?</h2>
-            <ul>
-                <li><strong>Proven Track Record:</strong> 30+ years of combined experience in enterprise software development and technology leadership</li>
-                <li><strong>Innovation-Driven:</strong> Award-winning innovation experience with proven ability to turn ideas into scalable solutions</li>
-                <li><strong>Healthcare-Focused Expertise:</strong> Deep understanding of security, compliance, and reliability requirements in healthcare environments</li>
-                <li><strong>End-to-End Capability:</strong> From system architecture and development to program management and delivery</li>
-                <li><strong>Collaborative Approach:</strong> We work closely with healthcare professionals to understand real needs and build practical solutions</li>
-                <li><strong>Quality-First:</strong> Enterprise-grade development processes ensuring reliable, secure, and scalable solutions</li>
-            </ul>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Proven Track Record</h3>
+                    <p>25+ years of combined experience in enterprise software development and technology leadership</p>
+                </div>
+                <div class="feature">
+                    <h3>Innovation-Driven</h3>
+                    <p>Award-winning innovation experience with proven ability to turn ideas into scalable solutions</p>
+                </div>
+                <div class="feature">
+                    <h3>Healthcare-Focused Expertise</h3>
+                    <p>Deep understanding of security, compliance, and reliability requirements in healthcare environments</p>
+                </div>
+                <div class="feature">
+                    <h3>End-to-End Capability</h3>
+                    <p>From system architecture and development to program management and delivery</p>
+                </div>
+                <div class="feature">
+                    <h3>Collaborative Approach</h3>
+                    <p>We work closely with healthcare professionals to understand real needs and build practical solutions</p>
+                </div>
+                <div class="feature">
+                    <h3>Quality-First</h3>
+                    <p>Enterprise-grade development processes ensuring reliable, secure, and scalable solutions</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Madilu Technologies</h3>
+                    <p style="color: #94a3b8;">Transforming healthcare through innovative technology solutions.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="about_us.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="contact_us.html">Contact</a>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="terms_of_service.html">Terms of Service</a>
+                </div>
+                <div>
+                    <h3>Connect</h3>
+                    <a href="mailto:info@madilu.in">info@madilu.in</a>
+                    <a href="tel:+91-xxx-xxx-xxxx">+91-xxx-xxx-xxxx</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Madilu Technologies. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
