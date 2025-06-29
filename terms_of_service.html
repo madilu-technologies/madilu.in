@@ -12,49 +12,50 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8fafc;
+            background: #ffffff;
         }
 
+        /* Header */
         .header {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
         }
 
         .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .nav-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
+            list-style: none;
+            gap: 2rem;
         }
 
-        .logo-circle {
-            width: 60px;
-            height: 60px;
-            border: 3px solid white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 1rem;
-            font-weight: bold;
-            font-size: 24px;
+        .nav-links a {
+            text-decoration: none;
+            color: #64748b;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .company-name {
-            font-size: 2rem;
-            font-weight: 600;
-        }
-
-        .company-tagline {
-            color: #a5b4fc;
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
+        .nav-links a:hover {
+            color: #2563eb;
         }
 
         .container {
@@ -65,32 +66,34 @@
 
         .main-content {
             background: white;
-            margin: -2rem auto 2rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 1;
+            margin-top: 80px;
+            padding-top: 4rem;
         }
 
         .content-header {
-            padding: 2rem;
-            border-bottom: 1px solid #e5e7eb;
+            padding: 4rem 0 2rem;
             text-align: center;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
         }
 
         .content-header h1 {
-            color: #1e40af;
-            font-size: 2.5rem;
+            color: white;
+            font-size: 3rem;
             margin-bottom: 0.5rem;
+            font-weight: 800;
         }
 
         .effective-date {
-            color: #6b7280;
-            font-size: 0.9rem;
+            color: #a5b4fc;
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
         .content-body {
-            padding: 2rem;
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .section {
@@ -98,17 +101,19 @@
         }
 
         .section h2 {
-            color: #1e40af;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
+            color: #2563eb;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
             border-bottom: 2px solid #e5e7eb;
+            font-weight: 700;
         }
 
         .section h3 {
-            color: #3730a3;
-            font-size: 1.2rem;
+            color: #2563eb;
+            font-size: 1.3rem;
             margin: 1.5rem 0 0.75rem 0;
+            font-weight: 600;
         }
 
         .section p {
@@ -150,22 +155,38 @@
         .footer {
             background: #1e293b;
             color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
+            padding: 3rem 0 2rem;
         }
 
-        .footer p {
-            margin-bottom: 0.5rem;
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+            color: #3b82f6;
         }
 
         .footer a {
-            color: #60a5fa;
+            color: #94a3b8;
             text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
 
         .footer a:hover {
-            text-decoration: underline;
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
         }
 
         @media (max-width: 768px) {
@@ -173,41 +194,32 @@
                 padding: 0 1rem;
             }
 
-            .main-content {
-                margin: -1rem auto 1rem;
-            }
-
-            .content-header, .content-body {
-                padding: 1.5rem;
-            }
-
             .content-header h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
-            .company-name {
-                font-size: 1.5rem;
+            .content-body {
+                padding: 2rem 1rem;
             }
 
-            .logo-circle {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <div class="logo">
-                <div class="logo-circle">M</div>
-                <div>
-                    <div class="company-name">Madilu Technologies</div>
-                    <div class="company-tagline">Transforming Healthcare Through Innovation</div>
-                </div>
-            </div>
-        </div>
+        <nav class="nav container">
+            <div class="logo">Madilu Technologies</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="solutions.html">Solutions</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
@@ -343,12 +355,32 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Madilu Technologies. All rights reserved.</p>
-            <p>
-                <a href="#privacy">Privacy Policy</a> | 
-                <a href="#terms">Terms of Service</a> | 
-                <a href="#contact">Contact Us</a>
-            </p>
+            <div class="footer-content">
+                <div>
+                    <h3>Madilu Technologies</h3>
+                    <p style="color: #94a3b8;">Transforming healthcare through innovative technology solutions.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="about_us.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="contact_us.html">Contact</a>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="terms_of_service.html">Terms of Service</a>
+                </div>
+                <div>
+                    <h3>Connect</h3>
+                    <a href="mailto:info@madilu.in">info@madilu.in</a>
+                    <a href="tel:+91-xxx-xxx-xxxx">+91-xxx-xxx-xxxx</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Madilu Technologies. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
