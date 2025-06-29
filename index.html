@@ -69,6 +69,57 @@
         color: #2563eb;
       }
 
+      /* Mobile Menu */
+      .mobile-menu-btn {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      .mobile-menu-btn span {
+        width: 25px;
+        height: 3px;
+        background: #2563eb;
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+      }
+
+      .mobile-nav.active {
+        display: block;
+      }
+
+      .mobile-nav ul {
+        list-style: none;
+        padding: 1rem 0;
+      }
+
+      .mobile-nav a {
+        display: block;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        color: #64748b;
+        font-weight: 500;
+        border-bottom: 1px solid #f1f5f9;
+        transition: all 0.3s ease;
+      }
+
+      .mobile-nav a:hover {
+        color: #2563eb;
+        background: #f8fafc;
+      }
+
       /* Hero Section */
       .hero {
         background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
@@ -284,6 +335,10 @@
           display: none;
         }
 
+        .mobile-menu-btn {
+          display: flex;
+        }
+
         .cta-buttons {
           flex-direction: column;
           align-items: center;
@@ -311,6 +366,18 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="solutions.html">Solutions</a></li>
         </ul>
+        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+          <ul>
+            <li><a href="about_us.html" onclick="closeMobileMenu()">About Us</a></li>
+            <li><a href="services.html" onclick="closeMobileMenu()">Services</a></li>
+            <li><a href="solutions.html" onclick="closeMobileMenu()">Solutions</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -459,5 +526,27 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      function toggleMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.classList.toggle('active');
+      }
+
+      function closeMobileMenu() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.classList.remove('active');
+      }
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        
+        if (!mobileNav.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+          mobileNav.classList.remove('active');
+        }
+      });
+    </script>
   </body>
 </html>
