@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Madilu Technologies</title>
+    <title>Terms of Service - Madilu Technologies</title>
     <style>
         * {
             margin: 0;
@@ -12,50 +12,33 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8fafc;
+            background: #ffffff;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        /* Header */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-        header {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
-        }
-
-        nav {
+        .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 0;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
             font-size: 1.8rem;
             font-weight: 700;
-        }
-
-        .logo::before {
-            content: "M";
-            width: 40px;
-            height: 40px;
-            background: white;
-            color: #1e3a8a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            font-weight: 800;
+            color: #2563eb;
         }
 
         .nav-links {
@@ -65,258 +48,339 @@
         }
 
         .nav-links a {
-            color: white;
             text-decoration: none;
+            color: #64748b;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #93c5fd;
+        .nav-links a:hover {
+            color: #2563eb;
         }
 
-        main {
-            padding: 4rem 0;
-        }
-
-        .hero-section {
-            text-align: center;
-            margin-bottom: 4rem;
-            padding: 3rem 0;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .hero-section p {
-            font-size: 1.2rem;
-            color: #64748b;
-            max-width: 600px;
+        .container {
+            max-width: 1000px;
             margin: 0 auto;
+            padding: 0 2rem;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .service-card {
+        .main-content {
             background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            margin-top: 80px;
+            padding-top: 4rem;
         }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(30, 58, 138, 0.15);
-            border-color: #3b82f6;
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #3b82f6, #1e3a8a);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            color: #1e3a8a;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .service-card ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .service-card li {
-            padding: 0.5rem 0;
-            color: #64748b;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .service-card li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 20px;
+        .content-header {
+            padding: 4rem 0 2rem;
             text-align: center;
-            margin-top: 4rem;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            color: white;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+        .content-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+        .effective-date {
+            color: #a5b4fc;
+            font-size: 1rem;
             opacity: 0.9;
         }
 
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #1e3a8a;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
+        .content-body {
+            padding: 3rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .section h2 {
+            color: #2563eb;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #e5e7eb;
+            font-weight: 700;
+        }
+
+        .section h3 {
+            color: #2563eb;
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0.75rem 0;
             font-weight: 600;
-            transition: all 0.3s;
-            border: 2px solid white;
         }
 
-        .btn:hover {
-            background: transparent;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        .section p {
+            margin-bottom: 1rem;
+            text-align: justify;
         }
 
-        footer {
-            background: #1e3a8a;
+        .section ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: #eff6ff;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contact-section {
+            background: #f1f5f9;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .footer {
+            background: #1e293b;
             color: white;
-            padding: 2rem 0;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+            color: #3b82f6;
+        }
+
+        .footer a {
+            color: #94a3b8;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
             text-align: center;
-            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
         }
 
         @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .content-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-body {
+                padding: 2rem 1rem;
+            }
+
             .nav-links {
                 display: none;
-            }
-
-            .hero-section h1 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-section h2 {
-                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
+    <header class="header">
+        <nav class="nav container">
             <div class="logo">Madilu Technologies</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="solutions.html">Solutions</a></li>
-                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="contact_us.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="hero-section">
-            <h1>Our Core Services</h1>
-            <p>Comprehensive healthcare technology solutions designed to transform your organization and improve patient outcomes</p>
-        </section>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">💻</div>
-                <h3>Healthcare Software Development</h3>
-                <p>Custom software solutions tailored specifically for healthcare organizations, built with security and compliance at the core.</p>
-                <ul>
-                    <li>Custom application development for healthcare organizations</li>
-                    <li>Electronic Health Record (EHR) integration solutions</li>
-                    <li>Patient management systems</li>
-                    <li>Healthcare analytics and reporting tools</li>
-                    <li>Mobile health applications</li>
-                </ul>
+    <div class="container">
+        <main class="main-content">
+            <div class="content-header">
+                <h1>Terms of Service</h1>
+                <div class="effective-date">
+                    Effective Date: [Insert Date]<br>
+                    Last Updated: [Insert Date]
+                </div>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">🔧</div>
-                <h3>Technology Consulting</h3>
-                <p>Strategic guidance to help your organization navigate digital transformation and optimize your technology investments.</p>
-                <ul>
-                    <li>Healthcare technology strategy consulting</li>
-                    <li>Digital transformation guidance</li>
-                    <li>System integration planning</li>
-                    <li>Technology stack recommendations</li>
-                    <li>Compliance and security consulting</li>
-                </ul>
+            <div class="content-body">
+                <section class="section">
+                    <h2>Acceptance of Terms</h2>
+                    <p>By accessing and using any Madilu Technologies services, including our website (madilu.in), software products, SaaS applications, and any other platforms or services we provide (regardless of URL or domain), you accept and agree to be bound by the terms and provisions of this agreement.</p>
+                </section>
+
+                <section class="section">
+                    <h2>Use License</h2>
+                    <p>Permission is granted to use Madilu Technologies' services, including software products and applications, in accordance with the specific license terms provided for each product or service.</p>
+                    
+                    <p><strong>Under this license you may not:</strong></p>
+                    <ul>
+                        <li>Modify, reverse engineer, or copy the software or materials</li>
+                        <li>Use the services for any unlawful purpose</li>
+                        <li>Attempt to gain unauthorized access to our systems or other users' data</li>
+                        <li>Remove any copyright or other proprietary notations from the materials or software</li>
+                        <li>Redistribute or resell our services without explicit authorization</li>
+                    </ul>
+                </section>
+
+                <section class="section">
+                    <h2>Disclaimer</h2>
+                    <div class="warning-box">
+                        <p>Our services and materials are provided on an 'as is' basis. Madilu Technologies makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2>Limitations of Liability</h2>
+                    
+                    <h3>Service Reliability and Unforeseen Circumstances</h3>
+                    <p>While Madilu Technologies is committed to providing reliable and secure healthcare technology services, we acknowledge that technology systems can be affected by various factors beyond our control. Despite our genuine efforts, comprehensive security measures, and adherence to industry best practices, unforeseen circumstances may occasionally occur, including but not limited to:</p>
+                    
+                    <ul>
+                        <li>Server crashes and hardware failures</li>
+                        <li>Network outages and connectivity issues</li>
+                        <li>Cyber attacks and security breaches by third parties</li>
+                        <li>Natural disasters and force majeure events</li>
+                        <li>Internet service provider failures</li>
+                        <li>Power outages and infrastructure disruptions</li>
+                        <li>Software bugs or unexpected system behaviors</li>
+                        <li>Third-party service dependencies and failures</li>
+                    </ul>
+
+                    <h3>Limitation of Damages</h3>
+                    <p>In recognition of the inherent risks associated with technology services and the critical nature of healthcare operations, the following limitations apply:</p>
+
+                    <div class="highlight-box">
+                        <h4>Exclusion of Liability</h4>
+                        <p>In no event shall Madilu Technologies, its officers, directors, employees, agents, or suppliers be liable for any damages whatsoever, including but not limited to:</p>
+                        <ul>
+                            <li><strong>Data Loss or Corruption:</strong> Loss, corruption, or unauthorized access to patient data, medical records, or other healthcare information</li>
+                            <li><strong>Service Interruption:</strong> Temporary or extended downtime of software applications, platforms, or services</li>
+                            <li><strong>Business Disruption:</strong> Interruption of healthcare operations, delayed patient care, or workflow disruptions</li>
+                            <li><strong>Financial Losses:</strong> Direct or indirect monetary losses, lost revenue, lost profits, or increased operational costs</li>
+                            <li><strong>Consequential Damages:</strong> Any special, incidental, punitive, or consequential damages arising from service use or inability to use services</li>
+                        </ul>
+                        <p>This limitation applies regardless of the cause of action, whether based on contract, tort, negligence, strict liability, breach of warranty, or any other legal theory, and even if Madilu Technologies has been advised of the possibility of such damages.</p>
+                    </div>
+
+                    <h3>Industry Standard Practice</h3>
+                    <p>This limitation of liability reflects standard practice in the software and healthcare technology industry, recognizing that:</p>
+                    <ul>
+                        <li><strong>Technology Inherent Risks:</strong> All technology systems carry inherent risks of failure that cannot be completely eliminated</li>
+                        <li><strong>External Dependencies:</strong> Software services depend on numerous external factors including internet infrastructure, third-party services, and environmental conditions</li>
+                        <li><strong>Reasonable Precautions:</strong> Service providers implement reasonable security and reliability measures but cannot guarantee absolute protection against all possible risks</li>
+                        <li><strong>Healthcare Criticality:</strong> While healthcare data and operations are critical, complete elimination of all technological risks is not feasible in current technology environments</li>
+                    </ul>
+
+                    <h3>Maximum Liability Cap</h3>
+                    <p>To the extent permitted by applicable law, Madilu Technologies' total cumulative liability for all claims arising out of or related to the use of our services shall not exceed the total amount paid by the client to Madilu Technologies in the three (3) months immediately preceding the event giving rise to the claim.</p>
+
+                    <h3>Jurisdictional Variations</h3>
+                    <p>Some jurisdictions do not allow the exclusion or limitation of certain types of damages or liability. In such jurisdictions, the above limitations may not apply, and Madilu Technologies' liability shall be limited to the maximum extent permitted by applicable law.</p>
+
+                    <h3>Client Responsibilities</h3>
+                    <p>Clients are encouraged to:</p>
+                    <ul>
+                        <li>Maintain regular data backups through independent means</li>
+                        <li>Implement appropriate business continuity plans</li>
+                        <li>Maintain adequate insurance coverage for their operations</li>
+                        <li>Follow recommended security practices and access controls</li>
+                    </ul>
+
+                    <h3>Exception for Gross Negligence</h3>
+                    <p>These limitations shall not apply to damages resulting from Madilu Technologies' gross negligence, willful misconduct, or violation of applicable law.</p>
+                </section>
+
+                <section class="section">
+                    <h2>Accuracy of Materials</h2>
+                    <p>The materials and information provided through our services could include technical, typographical, or other errors. Madilu Technologies does not warrant that any of the materials, software, or information in our services are accurate, complete, or current. We reserve the right to make changes to our services and materials at any time without notice.</p>
+                </section>
+
+                <section class="section">
+                    <h2>Links</h2>
+                    <p>Madilu Technologies has not reviewed all of the sites or services linked to from our platforms and is not responsible for the contents of any such linked sites or third-party services.</p>
+                </section>
+
+                <section class="section">
+                    <h2>Modifications</h2>
+                    <p>Madilu Technologies may revise these terms of service at any time without prior notice. By using any of our services, including our website, software products, or applications, you are agreeing to be bound by the then current version of these terms of service. We recommend checking this page periodically for updates.</p>
+                </section>
+
+                <section class="section">
+                    <h2>Governing Law and Jurisdiction</h2>
+                    <p>These terms and conditions are governed by and construed in accordance with the laws of India.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>Exclusive Jurisdiction</h4>
+                        <p>Any disputes, claims, or legal proceedings arising out of or relating to these Terms of Service, our services, or your use of our platforms shall be subject to the exclusive jurisdiction of the courts located in Bangalore, Karnataka, India. By using our services, you irrevocably consent to the jurisdiction of such courts and waive any objection to venue in such courts on the grounds of inconvenient forum or otherwise.</p>
+                    </div>
+                </section>
+
+                <div class="contact-section">
+                    <h2>Contact Information</h2>
+                    <p>Questions about the Terms of Service should be sent to us at <strong>[Your legal email]</strong>.</p>
+                </div>
             </div>
+        </main>
+    </div>
 
-            <div class="service-card">
-                <div class="service-icon">🔬</div>
-                <h3>Research & Development</h3>
-                <p>Innovation-driven research to identify emerging opportunities and develop cutting-edge healthcare technology solutions.</p>
-                <ul>
-                    <li>Healthcare technology trend analysis</li>
-                    <li>Proof-of-concept development</li>
-                    <li>Innovation workshops with healthcare teams</li>
-                    <li>Emerging technology evaluation</li>
-                    <li>Custom research projects</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <div class="service-icon">🤝</div>
-                <h3>Partnership & Collaboration</h3>
-                <p>Building meaningful partnerships and fostering collaboration to drive innovation across the healthcare ecosystem.</p>
-                <ul>
-                    <li>Joint development projects with healthcare organizations</li>
-                    <li>Technology partnership facilitation</li>
-                    <li>Stakeholder engagement programs</li>
-                    <li>Healthcare innovation communities</li>
-                    <li>Knowledge sharing initiatives</li>
-                </ul>
-            </div>
-        </div>
-
-        <section class="cta-section">
-            <h2>Ready to Transform Your Healthcare Technology?</h2>
-            <p>Let's discuss how our services can help your organization achieve its goals and improve patient outcomes.</p>
-            <a href="contact_us.html" class="btn">Get In Touch</a>
-        </section>
-    </main>
-
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Madilu Technologies. All rights reserved.</p>
+            <div class="footer-content">
+                <div>
+                    <h3>Madilu Technologies</h3>
+                    <p style="color: #94a3b8;">Transforming healthcare through innovative technology solutions.</p>
+                </div>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="about_us.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="solutions.html">Solutions</a>
+                    <a href="contact_us.html">Contact</a>
+                </div>
+                <div>
+                    <h3>Legal</h3>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="terms_of_service.html">Terms of Service</a>
+                </div>
+                <div>
+                    <h3>Connect</h3>
+                    <a href="mailto:info@madilu.in">info@madilu.in</a>
+                    <a href="tel:+91-xxx-xxx-xxxx">+91-xxx-xxx-xxxx</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Madilu Technologies. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 </body>
